@@ -63,7 +63,7 @@ module PdfHelper
           unless opt_hf[:html].blank?
             r += make_option("#{hf.to_s}-html", opt_hf[:html][:url]) unless opt_hf[:html][:url].blank?
             WickedPdfTempfile.open("wicked_pdf.html") do |f|
-              f << render_to_string(:template => opt_hf[:html][:template], :layout => opts[:layout])
+              f << render_to_string(:template => opt_hf[:html][:template], :layout => opts[:layout], :locals => opt_hf[:html][:locals])
               r += make_option("#{hf.to_s}-html", "file://#{f.path}")
             end unless opt_hf[:html][:template].blank?
           end

@@ -59,7 +59,9 @@ Next:
                    :disable_smart_shrinking => true,  #OPTIONAL
                    :use_xserver => true,  #OPTIONAL
                    :no_background => true,  #OPTIONAL
-                   :header => {:html => {:template => "public/header.pdf.erb" OR :url => "www.header.bbb"}, #OPTIONAL
+                   :header => {:html => {:locals => {:foo => @bar}, #OPTIONAL
+                                         :template => "public/header.pdf.erb" OR :url => "www.header.bbb"
+                                        }, #OPTIONAL
                                :center => "TEXT", #OPTIONAL
                                :font_name => "NAME", #OPTIONAL
                                :font_size => SIZE, #OPTIONAL
@@ -67,7 +69,9 @@ Next:
                                :right => "TEXT", #OPTIONAL
                                :spacing => REAL, #OPTIONAL
                                :line => true}, #OPTIONAL
-                   :footer => {:html => {:template => "public/header.pdf.erb" OR :url => "www.header.bbb"}, #OPTIONAL
+                   :footer => {:html => {:locals => {:foo => @bar}, #OPTIONAL
+                                         :template => "public/header.pdf.erb" OR :url => "www.header.bbb"
+                                        }, #OPTIONAL
                                :center => "TEXT", #OPTIONAL
                                :font_name => "NAME", #OPTIONAL
                                :font_size => SIZE, #OPTIONAL
